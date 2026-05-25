@@ -1,42 +1,30 @@
+// js/typing.js
 const text = [
-  "Aspiring Data Scientist",
-  "Aspiring AI Engineer",
-  "Machine Learning Engineer",
-  "Data Analyst"
+  "AI & Data Science Student",
+  "Data Scientist | AI Enthusiast",
+  "Building Recommendation Systems"
 ];
 
-let i = 0;
-let j = 0;
-let isDeleting = false;
-const typingElement = document.getElementById("typing");
+let i = 0, j = 0, current = "", isDeleting = false;
 
 function type() {
-  if (!typingElement) return;
+  current = text[i];
 
-  const current = text[i];
-  typingElement.textContent = current.substring(0, j);
-
-  if (!isDeleting && j < current.length) {
-    j += 1;
-    setTimeout(type, 90);
-    return;
+  if (!isDeleting) {
+    document.getElementById("typing").innerHTML = current.substring(0, j++);
+    if (j > current.length) {
+      isDeleting = true;
+      setTimeout(type, 1000);
+      return;
+    }
+  } else {
+    document.getElementById("typing").innerHTML = current.substring(0, j--);
+    if (j == 0) {
+      isDeleting = false;
+      i = (i + 1) % text.length;
+    }
   }
-
-  if (!isDeleting && j === current.length) {
-    isDeleting = true;
-    setTimeout(type, 1200);
-    return;
-  }
-
-  if (isDeleting && j > 0) {
-    j -= 1;
-    setTimeout(type, 45);
-    return;
-  }
-
-  isDeleting = false;
-  i = (i + 1) % text.length;
-  setTimeout(type, 250);
+  setTimeout(type, isDeleting ? 50 : 100);
 }
 
 type();

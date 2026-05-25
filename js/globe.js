@@ -10,10 +10,10 @@ if (canvas && ctx) {
   const radius = 178;
 
   const skills = [
-    "Python", "SQL", "HTML", "CSS", "JavaScript",
+    "Python", "SQL",
     "NumPy", "Pandas", "Scikit-learn", "Machine Learning",
     "Deep Learning", "Statistics", "Excel", "Power BI",
-    "Apache Kafka", "Git", "GitHub", "MySQL", "Flask",
+    "Git", "GitHub", "MySQL", "Flask", "FastAPI",
     "SVD++", "TF-IDF", "Clustering", "RFM Analysis"
   ];
 
