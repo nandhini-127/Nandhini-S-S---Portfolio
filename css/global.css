@@ -122,88 +122,6 @@ canvas {
   border-color: rgba(15, 118, 110, 0.16);
 }
 
-/* ---------- Resume dropdown ---------- */
-.resume-dropdown {
-  position: relative;
-}
-
-.resume-dropdown-toggle {
-  color: var(--accent-strong) !important;
-  border-color: rgba(15, 118, 110, 0.28) !important;
-  gap: 6px;
-}
-
-.resume-dropdown-toggle::after {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(45deg);
-  margin-top: -3px;
-  transition: transform 0.25s ease;
-}
-
-.resume-dropdown:hover .resume-dropdown-toggle::after,
-.resume-dropdown:focus-within .resume-dropdown-toggle::after {
-  transform: rotate(-135deg);
-}
-
-.resume-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 6px);
-  right: 0;
-  min-width: 220px;
-  padding: 6px 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(6px);
-  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
-  z-index: 1100;
-}
-
-.resume-dropdown:hover .resume-dropdown-menu,
-.resume-dropdown:focus-within .resume-dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.resume-dropdown-menu a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  color: var(--text) !important;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: none;
-  border: none !important;
-  border-radius: 0 !important;
-  background: transparent !important;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.resume-dropdown-menu a:hover {
-  color: var(--accent-strong) !important;
-  background: var(--accent-soft) !important;
-}
-
-.resume-dropdown-menu a .resume-icon {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  opacity: 0.6;
-}
-
-.resume-dropdown-menu a:hover .resume-icon {
-  opacity: 1;
-}
 
 .page-shell {
   width: min(1120px, calc(100% - 36px));
@@ -309,11 +227,6 @@ canvas {
   text-decoration: none;
 }
 
-.footer-resume-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
 
 @media (max-width: 760px) {
   .site-nav {
